@@ -8,6 +8,14 @@
 3. Clone the file ```.env.template``` and rename as ```.env```
 4. Fill all the environment variables on ```.env```
 5. Up database
-```docker-compose up -d```
+```
+  docker-compose up -d
+```
 6. Run with next command:
-```yarn start:dev```
+```
+  yarn start:dev
+```
+7. Fill data (be sure that run on debug)
+```
+  GET -> localhost:3000/api/seed
+``` 
