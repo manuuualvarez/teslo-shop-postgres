@@ -1,5 +1,5 @@
 export interface JwTPayload {
-    email: string;
+    uid: string;
     //TODO: add more fields that I want to return
 
 }

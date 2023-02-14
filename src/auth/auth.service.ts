@@ -31,7 +31,7 @@ export class AuthService {
       delete user.password;
       return {
         ...user,
-        token: this.getJwtToken({ email: user.email })
+        token: this.getJwtToken({ uid: user.uid })
       };
 
     } catch (error) {
@@ -43,7 +43,7 @@ export class AuthService {
     const { password, email } = loginUserDto;
     const user = await this.userRepository.findOne({ 
       where: { email },
-      select: { email: true, password: true }
+      select: { email: true, password: true, uid: true }
      });
 
      if(!user) throw new BadRequestException('Invalid credentials');
@@ -54,7 +54,7 @@ export class AuthService {
      }
      return {
       ...user,
-      token: this.getJwtToken({ email: user.email })
+      token: this.getJwtToken({ uid: user.uid })
      };
   }
 
