@@ -7,6 +7,8 @@ import { GetUser } from './decorators/get-user.decorator';
 import { User } from './entities/user.entity';
 import { RawHeader } from './decorators/raw-headers.decorator';
 import { UserRoleGuard } from './guards/user-role/user-role.guard';
+import { RoleProtected } from './decorators/role-protected/role-protected.decorator';
+import { ValidUserRoles } from './interfaces/valid-user-roles';
 
 @Controller('auth')
 export class AuthController {
@@ -38,9 +40,13 @@ export class AuthController {
     }
   }
 
+  /// Was replaced by custom decorator
+  // @SetMetadata('roles', ['admin', 'super-user'])
 
   @Get('private2')
-  @SetMetadata('roles', ['admin', 'super-user'])
+  // ! This is the custom decorator to validate user roles
+  @RoleProtected(ValidUserRoles.superUser)
+  // ! This is the custom decorator to validate user auth
   @UseGuards(AuthGuard(), UserRoleGuard )
   privateRoute2(
     @GetUser() user: User,
