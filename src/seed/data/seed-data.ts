@@ -23,7 +23,6 @@ interface SeedData {
     products: SeedProduct[];
 }
 
-
 // ! Product data
 export const initialData: SeedData = {
     users: [

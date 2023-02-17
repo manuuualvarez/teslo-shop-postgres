@@ -25,6 +25,15 @@ export class AuthController {
     return this.authService.signIn(loginUserDto);
   }
 
+
+  @Get('revalidate-token')
+  @Auth()
+  checkoutStatus(
+    @GetUser() user: User
+  ) {
+    return this.authService.checkAuthStatus(user);
+  }
+
   @Get('private')
   @UseGuards(AuthGuard())
   testingPrivateRoute(
