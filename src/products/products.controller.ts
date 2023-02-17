@@ -8,18 +8,25 @@ import { ValidUserRoles } from 'src/auth/interfaces/valid-user-roles';
 import { GetUser } from 'src/auth/decorators/get-user.decorator';
 import { User } from 'src/auth/entities/user.entity';
 import { use } from 'passport';
+import { ApiResponse, ApiTags } from '@nestjs/swagger';
+import { Product } from './entities';
 
+@ApiTags('Products')
 @Controller('products')
 export class ProductsController {
   constructor(private readonly productsService: ProductsService) {}
 
   @Post()
   @Auth()
+  // * Swagger
+  @ApiResponse( { status: 201, description: 'The product has been successfully created.', type: Product })
+  @ApiResponse( { status: 400, description: 'Bad request' })
+  @ApiResponse( { status: 403, description: 'Token invalid' })
   create(
     @Body() createProductDto: CreateProductDto,
     // ! Use a custom decorator to get User
     @GetUser() user: User
-  ) {
+  ){
     return this.productsService.create(createProductDto, user);
   }
 
