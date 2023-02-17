@@ -25,7 +25,6 @@ export class AuthController {
     return this.authService.signIn(loginUserDto);
   }
 
-
   @Get('revalidate-token')
   @Auth()
   checkoutStatus(
@@ -49,7 +48,6 @@ export class AuthController {
       rawHeaders
     }
   }
-
   
   @Get('role-not-authorized-example')
   // Was replaced by custom decorator
@@ -67,7 +65,6 @@ export class AuthController {
       user,
     }
   }
-
 
   @Get('unique-decorator')
   // Was replaced by custom decorator Auth

@@ -1,0 +1,488 @@
+{
+	"info": {
+		"_postman_id": "d1df2b4b-19e6-48e1-8770-b127f473737f",
+		"name": "Teslo-Shop",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8050490"
+	},
+	"item": [
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "Get All Products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/products",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Products (Pagination)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/products?limit=2&offset=1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"products"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "2"
+								},
+								{
+									"key": "offset",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Product By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/products/ae095999-9f57-4a30-b9a5-af4dd63f51b8",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"products",
+								"ae095999-9f57-4a30-b9a5-af4dd63f51b8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Product By Slug Or Title",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/products/Prueba 51",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"products",
+								"Prueba 51"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Product By Id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/products/3854092c-b231-4879-af08-4edbd637efbc",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"products",
+								"3854092c-b231-4879-af08-4edbd637efbc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Product (without slug)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Prueba 51\",\n    \"sizes\": [\"XXL\", \"XL\"],\n    \"gender\": \"men\",\n    \"price\": 151.99,\n    \"images\": [\n        \"https://image1.jpg\",\n        \"https://image2.jpg\"\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/products",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Salio corderoy shirt\",\n    \"sizes\": [\"XXL\", \"XL\"],\n    \"gender\": \"men\",\n    \"slug\": \"lambd-shirt\",\n        \"images\": [\n        \"https://image1.jpg\",\n        \"https://image2.jpg\"\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/products",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Product By Id",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"tags\": [\"shirt\", \"shirt\"],\n    \"images\": [\n        \"https://imagePrueba1.jpg\"\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/products/0c6eaf3a-f5ae-424d-95d9-87c6fe4b1263",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"products",
+								"0c6eaf3a-f5ae-424d-95d9-87c6fe4b1263"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Seed",
+			"item": [
+				{
+					"name": "Fill Data",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/seed",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"seed"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Upload Files",
+			"item": [
+				{
+					"name": "Upload images to Product on FileSystem",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/Users/manuelalvarez/Desktop/iCloud/My Brand/me-mac.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/api/files/product",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"files",
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Images By name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/files/product/1715672-00-A_featured.jpg",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"files",
+								"product",
+								"1715672-00-A_featured.jpg"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Sign Up",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"test@gmail.com\",\n    \"password\": \"Test1234\",\n    \"firstName\": \"Test\",\n    \"lastName\": \"Example User\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/auth/signup",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sign In",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"alvarezmanuelignacio@gmail.com\",\n    \"password\": \"Test1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/auth/signin",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Revalidate Token",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI0NTA2N2JlOC1jZDM4LTRjMjYtYjM4ZC1mNzk2MWI1MGVlNjQiLCJpYXQiOjE2NzY2NzA0NjQsImV4cCI6MTY3NjY3NDA2NH0.QmTJZ4nurpLrm35vZehzToane2KcIHjxnnXzeRCHFtg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/auth/revalidate-token",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"revalidate-token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Private routes",
+			"item": [
+				{
+					"name": "Unauthorized",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI5ODBhMjg1OS0xMGEwLTQxMjAtOWY5My0yMTA2ZjhjNzM5OGIiLCJpYXQiOjE2NzYzNjIxNTcsImV4cCI6MTY3NjM2NTc1N30.-maql73bVUqC9yj9SRi9AeBlB4MQ10uPv9prIn6criA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/auth/private",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"private"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Not auth requiest for role",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI5ODBhMjg1OS0xMGEwLTQxMjAtOWY5My0yMTA2ZjhjNzM5OGIiLCJpYXQiOjE2NzY1MzY0OTUsImV4cCI6MTY3NjU0MDA5NX0.HK4J-B9RLjv6UJ2cePf6V8uAoHodyOHRsLyw1DIvV5g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/auth/role-not-authorized-example",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"role-not-authorized-example"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "unique-decorator",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI5ODBhMjg1OS0xMGEwLTQxMjAtOWY5My0yMTA2ZjhjNzM5OGIiLCJpYXQiOjE2NzY1MzY0OTUsImV4cCI6MTY3NjU0MDA5NX0.HK4J-B9RLjv6UJ2cePf6V8uAoHodyOHRsLyw1DIvV5g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/auth/unique-decorator",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"unique-decorator"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
